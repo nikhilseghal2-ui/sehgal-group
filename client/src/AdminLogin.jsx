@@ -17,7 +17,7 @@ const handleLogin = async (e) => {
 
   try {
     const response = await fetch(
-      "http://localhost:5000/api/admin/login",
+      "https://sehgal-group-backend.onrender.com/api/admin/login",
       {
         method: "POST",
         headers: {
