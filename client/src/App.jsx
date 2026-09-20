@@ -113,7 +113,7 @@ const fetchContactMessages = async () => {
     const token = localStorage.getItem("sehgalAdminToken");
 
     const response = await fetch(
-      "http://localhost:5000/api/admin/contacts",
+      "https://sehgal-group-backend.onrender.com/api/admin/contacts",
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -139,7 +139,7 @@ const fetchCustomers = async () => {
     const token = localStorage.getItem("sehgalAdminToken");
 
     const response = await fetch(
-      "http://localhost:5000/api/admin/customers",
+      "https://sehgal-group-backend.onrender.com/api/admin/customers",
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -169,7 +169,7 @@ const verifyAdminToken = async () => {
     }
 
     const response = await fetch(
-      "http://localhost:5000/api/admin/verify",
+      "https://sehgal-group-backend.onrender.com/api/admin/verify",
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -196,19 +196,19 @@ const fetchStats = async () => {
 
     const [customersResponse, ordersResponse, messagesResponse] =
       await Promise.all([
-        fetch("http://localhost:5000/api/admin/customers", {
+        fetch("https://sehgal-group-backend.onrender.com/api/admin/customers", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         }),
 
-        fetch("http://localhost:5000/api/admin/orders", {
+        fetch("https://sehgal-group-backend.onrender.com/api/admin/orders", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         }),
 
-        fetch("http://localhost:5000/api/admin/contacts", {
+        fetch("https://sehgal-group-backend.onrender.com/api/admin/contacts", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -246,7 +246,7 @@ const fetchStats = async () => {
 const fetchProducts = async () => {
   try {
     const response = await fetch(
-      "http://localhost:5000/api/products"
+      "https://sehgal-group-backend.onrender.com/api/products"
     );
 
     const data = await response.json();
@@ -291,7 +291,7 @@ useEffect(() => {
 const token = localStorage.getItem("sehgalAdminToken");
 
 const response = await fetch(
-  "http://localhost:5000/api/admin/orders",
+  "https://sehgal-group-backend.onrender.com/api/admin/orders",
   {
     headers: {
       Authorization: `Bearer ${token}`,
@@ -376,8 +376,8 @@ const handleAuth = async () => {
   try {
     const endpoint =
       authMode === "signup"
-        ? "http://localhost:5000/api/auth/signup"
-        : "http://localhost:5000/api/auth/login";
+        ? "https://sehgal-group-backend.onrender.com/api/auth/signup"
+        : "https://sehgal-group-backend.onrender.com/api/auth/login";
 
     const response = await fetch(endpoint, {
       method: "POST",
@@ -462,7 +462,7 @@ if (!token) {
    
 
    const response = await fetch(
-   "http://localhost:5000/api/orders",
+   "https://sehgal-group-backend.onrender.com/api/orders",
    {
     method: "POST",
     headers: {
@@ -534,7 +534,7 @@ const handleCancelOrder = async (orderId) => {
     const token = localStorage.getItem("sehgalToken");
 
     const response = await fetch(
-      `http://localhost:5000/api/orders/${orderId}/cancel`,
+      `https://sehgal-group-backend.onrender.com/api/orders/${orderId}/cancel`,
       {
         method: "PUT",
         headers: {
@@ -578,7 +578,7 @@ const fetchMyOrders = async () => {
 const token = localStorage.getItem("sehgalToken");
 
 const response = await fetch(
-  "http://localhost:5000/api/orders",
+  "https://sehgal-group-backend.onrender.com/api/orders",
   {
     headers: {
       Authorization: `Bearer ${token}`,
@@ -604,7 +604,7 @@ const handleAddProduct = async (e) => {
   e.preventDefault();
 
   try {
-    const response = await fetch("http://localhost:5000/api/products", {
+    const response = await fetch("https://sehgal-group-backend.onrender.com/api/products", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -805,7 +805,7 @@ if (isAdmin === "orders") {
 
       try {
         const response = await fetch(
-          `http://localhost:5000/api/orders/${order._id}/status`,
+          `https://sehgal-group-backend.onrender.com/api/orders/${order._id}/status`,
           {
             method: "PUT",
 headers: {
@@ -1266,7 +1266,7 @@ if (isAdmin === "customers") {
 
               try {
                 const response = await fetch(
-                  `http://localhost:5000/api/products/${editingProduct.id}`,
+                  `https://sehgal-group-backend.onrender.com/api/products/${editingProduct.id}`,
                   {
                     method: "PUT",
 headers: {
@@ -1460,7 +1460,7 @@ headers: {
 
                   try {
                     const response = await fetch(
-                      `http://localhost:5000/api/products/${product.id}`,
+                      `https://sehgal-group-backend.onrender.com/api/products/${product.id}`,
                   {
   method: "DELETE",
   headers: {
@@ -1564,7 +1564,7 @@ headers: {
 
         try {
           const response = await fetch(
-            "http://localhost:5000/api/auth/reset-password",
+            "https://sehgal-group-backend.onrender.com/api/auth/reset-password",
             {
               method: "POST",
               headers: {
@@ -1643,7 +1643,7 @@ headers: {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/auth/forgot-password",
+        "https://sehgal-group-backend.onrender.com/api/auth/forgot-password",
         {
           method: "POST",
           headers: {
@@ -2528,7 +2528,7 @@ setAuthMode("reset");
         setContactLoading(true);
 
         const response = await fetch(
-          "http://localhost:5000/api/contact",
+          "https://sehgal-group-backend.onrender.com/api/contact",
           {
             method: "POST",
             headers: {
